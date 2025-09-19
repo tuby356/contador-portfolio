@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador de visitas</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        #contador { font-size: 2em; color: #007BFF; }
+    </style>
+</head>
+<body>
+    <h3>Visitas a la página:</h3>
+    <div id="contador">0</div>
+
+    <script>
+        // Contador simple usando localStorage (se guarda por navegador)
+        let visitas = localStorage.getItem('contadorVisitas') || 0;
+        visitas++;
+        localStorage.setItem('contadorVisitas', visitas);
+        document.getElementById('contador').textContent = visitas;
+    </script>
+</body>
+</html>
